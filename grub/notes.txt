@@ -1,0 +1,38 @@
+Deprecated
+Filleted Catfish
+1x8=8
+2x8=16
+Steamed Lobster
+4x6=24
+4x6=24
+Baked Cod
+1x5=5
+2x3=6
+
+Grilled Sardine
+2x2=4
+1x8=8
+Fried Mackerel
+1x5=5
+1x15=15
+Broiled Eel
+2x5=10
+2x10=20
+Grilled Salmon
+2x15=30
+2x15=30
+Smoked Halibut
+3x7=21
+3x15=45
+Steamed King Crab
+4x6=24
+4x12=48
+Roasted Tuna 
+4x8=32
+4x15=60
+Grilled Swordfish
+7x7=49
+6x15=75
+Filleted Bugshark
+15x5=75
+10x20=200

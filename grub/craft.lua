@@ -1,5 +1,5 @@
 function eat(i, u, pt, h)--itemstack, user, pointed_thing, hunger
-    if core.get_modpath("stats") then
+    if core.get_modpath("needs") then
         stats.set(u, "hunger", h)
     end
     return core.do_item_eat(1, nil, i, u, pt)

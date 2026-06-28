@@ -1,4 +1,4 @@
-stats = {}
-stats.modpath = core.get_modpath("stats")
---dofile(stats.modpath.."/hud.lua")
-dofile(stats.modpath.."/hud6.lua")
+needs = {}
+needs.modpath = core.get_modpath("needs")
+--dofile(needs.modpath.."/hud.lua")
+dofile(needs.modpath.."/hud6.lua")

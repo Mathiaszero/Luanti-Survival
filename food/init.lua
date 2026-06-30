@@ -1,6 +1,6 @@
 food = {}
 
-.modpath = core.get_modpath("food")
+food.modpath = core.get_modpath("food")
 dofile(food.modpath.."/craft.lua")
 
 text = "food mod loaded."

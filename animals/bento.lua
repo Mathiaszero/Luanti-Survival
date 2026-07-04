@@ -1,6 +1,6 @@
-core.register_craftitem("animals:rockma", {
-    description = "rockma",
-    inventory_image = "rockma_inv.png",
+core.register_craftitem("animals:bento", {
+    description = "bento",
+    inventory_image = "bento_inv.png",
     
     -- Called when the player uses/right-clicks with the item
     on_use = function(itemstack, user, pointed_thing)
@@ -9,7 +9,7 @@ core.register_craftitem("animals:rockma", {
             return itemstack 
         end
         -- Spawn the mob entity (e.g., from the mobs_redo mod)
-        local mob = core.add_entity(vector.add(pointed_thing.under, vector.new(0, 1, 0)), "animals:rockma")
+        local mob = core.add_entity(vector.add(pointed_thing.under, vector.new(0, 1, 0)), "animals:bento")
         -- Optional: reduce the itemstack count by 1 if not in creative mode
         if not core.is_creative_enabled(user:get_player_name()) then
             itemstack:take_item()
@@ -18,19 +18,19 @@ core.register_craftitem("animals:rockma", {
     end,
 })
 
-core.register_craftitem("animals:rockma_hide", {
-    description = "Rockma Hide",
-    inventory_image = "rockma_hide.png",
+core.register_craftitem("animals:bento_raw", {
+    description = "Raw bento Meat",
+    inventory_image = "bento_raw.png",
 })
 
-core.register_entity("animals:rockma", {
+core.register_entity("animals:bento", {
     initial_properties = {
         hp_max = 20,
         physical = true,
         visual = "mesh",
-        mesh = "rockma.b3d", -- Or a custom 3D model
-        textures = {"rockma.png"},
-        collisionbox = {-0.8, -0.01, -0.8, 0.8, 1.5, 0.8},
+        mesh = "bento.b3d", -- Or a custom 3D model
+        textures = {"bento.png"},
+        collisionbox = {-0.4, -0.01, -0.4, 0.4, 0.95, 0.4},
     },
     timer = 0,
 
@@ -73,7 +73,7 @@ core.register_entity("animals:rockma", {
         local pos = self.object:get_pos()
         
         -- Spawn an item stack (e.g., 2 apple items) at the entity's location
-        core.add_item(pos, "animals:rockma_hide")
+        core.add_item(pos, "animals:bento_raw")
     end,
 })
 
@@ -93,7 +93,7 @@ core.register_abm({
             -- This example uses simple line-of-sight/presence check
             
             -- Spawn the mob
-            minetest.add_entity(spawn_pos, "animals:rockma")
+            minetest.add_entity(spawn_pos, "animals:bento")
         end
     end
 })

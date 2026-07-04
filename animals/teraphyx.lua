@@ -18,6 +18,11 @@ core.register_craftitem("animals:teraphyx", {
     end,
 })
 
+core.register_craftitem("animals:teraphyx_raw", {
+    description = "Raw Teraphyx Meat",
+    inventory_image = "teraphyx_raw.png",
+})
+
 core.register_entity("animals:teraphyx", {
     initial_properties = {
         hp_max = 20,
@@ -28,6 +33,7 @@ core.register_entity("animals:teraphyx", {
         collisionbox = {-0.4, -0.01, -0.4, 0.4, 0.95, 0.4},
     },
     timer = 0,
+
     on_step = function(self, dtime, moveresult)
         self.timer = self.timer + dtime
         local yaw = self.object:get_yaw() -- Get the current yaw in radians
@@ -41,6 +47,7 @@ core.register_entity("animals:teraphyx", {
             y= -1,
             z = dir_z
         })
+
         if self.timer >= 5.0 then
             self.timer = 0
             -- Generate a random yaw angle (0 to 2 * pi)
@@ -48,6 +55,44 @@ core.register_entity("animals:teraphyx", {
             -- Set the mob's new facing direction
             self.object:set_yaw(random_yaw)
         end
+    end,
+
+    on_death = function(self, killer)
+        -- Get the current position
+        local pos = self.object:get_pos()
         
+        -- Spawn an item stack (e.g., 2 apple items) at the entity's location
+        core.add_item(pos, "animals:teraphyx_raw")
     end,
 })
+
+core.register_abm({
+    label = "Spawn mob on dirt",
+    nodenames = {"group:soil"},
+    interval = 60, -- Check every 60 seconds
+    chance = 8000,  -- 1 in 200 chance to trigger when in range and active
+    action = function(pos, node, active_object_count, active_object_count_wider)
+        -- Find the block directly above the dirt
+        local spawn_pos = {x = pos.x, y = pos.y + 1, z = pos.z}
+        
+        -- Check if it is air so the mob doesn't spawn inside a block
+        local above_node = core.get_node(spawn_pos)
+        if above_node and above_node.name == "air" then
+            -- Raycast or check for nearby players to limit spawning
+            -- This example uses simple line-of-sight/presence check
+            
+            -- Spawn the mob
+            minetest.add_entity(spawn_pos, "animals:teraphyx")
+        end
+    end
+})
+
+--water
+-- -- Get the node position at the entity's base
+-- local pos = self.object:get_pos()
+-- local node = core.get_node(pos)
+
+-- -- Check if the node belongs to the "liquid" group
+-- if minetest.get_item_group(node.name, "liquid") ~= 0 then
+--     self.object:set_hp(0)
+-- end

@@ -57,6 +57,17 @@ core.register_entity("animals:teraphyx", {
         end
     end,
 
+    on_deactivate = function(self, removal)
+        -- 'removal' is a boolean: true if obj:remove() was called, 
+        -- or false if the mapblock was unloaded by the engine.
+        if removal then
+            -- Object was explicitly deleted
+        else
+            -- Mapblock containing the entity was unloaded
+            self.object:remove()
+        end
+    end,
+
     on_death = function(self, killer)
         -- Get the current position
         local pos = self.object:get_pos()

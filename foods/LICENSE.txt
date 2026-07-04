@@ -1,8 +1,4 @@
-Please check each mod for their own respective licenses.
-
 The MIT License (MIT)
-
-Survival Modpack
 
 Copyright (c) 2026 Mathiaszero
 

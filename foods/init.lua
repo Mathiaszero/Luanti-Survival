@@ -1,8 +1,7 @@
 foods = {}
 
 foods.modpath = core.get_modpath("foods")
-dofile(foods.modpath.."/craft.lua")
-
+dofile(foods.modpath.."/seafood.lua")
 text = "foods mod loaded."
 print(text)
 

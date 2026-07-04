@@ -30,25 +30,17 @@ core.register_entity("animals:teraphyx", {
     timer = 0,
     on_step = function(self, dtime, moveresult)
         self.timer = self.timer + dtime
-
-local yaw = self.object:get_yaw() -- Get the current yaw in radians
-local speed = 1           -- Set your desired movement speed
-
--- Calculate directional vectors based on yaw
-local dir_x = math.sin(yaw) * -speed
-local dir_z = math.cos(yaw) * speed
-
--- Get the current vertical velocity so gravity and jumping aren't affected
---local current_y = self.object:get_velocity().y
-
--- Apply the velocity
-self.object:set_velocity({
-    x = dir_x,
-    --y = current_y,
-    y= -1,
-    z = dir_z
-})
-
+        local yaw = self.object:get_yaw() -- Get the current yaw in radians
+        local speed = 1           -- Set your desired movement speed
+        -- Calculate directional vectors based on yaw
+        local dir_x = math.sin(yaw) * -speed
+        local dir_z = math.cos(yaw) * speed
+        -- Apply the velocity
+        self.object:set_velocity({
+            x = dir_x,
+            y= -1,
+            z = dir_z
+        })
         if self.timer >= 5.0 then
             self.timer = 0
             -- Generate a random yaw angle (0 to 2 * pi)
@@ -59,46 +51,3 @@ self.object:set_velocity({
         
     end,
 })
-    
-
--- core.register_entity("animals:teraphyx", {
---     initial_properties = {
---         hp_max = 20,
---         physical = true,
---         visual = "mesh",
---         mesh = "teraphyx.b3d", -- Or a custom 3D model
---         textures = {"teraphyx.png"},
---         collisionbox = {-0.4, -0.01, -0.4, 0.4, 0.95, 0.4},
---     },
---     timer = 0,
---     on_step = function(self, dtime, moveresult)
---         -- Increment the timer by the time since the last step
---         self.timer = self.timer + dtime
---         -- Apply a constant downward velocity to pull the mob to the ground
---         local velocity = self.object:get_velocity()
---         velocity.y = -5
---         --self.object:set_velocity(velocity)
-
---         local yaw = self.object:get_yaw()
-
---         local dx = math.sin(yaw)
---         local dz = math.cos(yaw)
---         local speed = 2.0 -- Adjust speed as needed
-
--- self.object:set_velocity({
---     x = dx * speed,
---     y = self.object:get_velocity().y, -- Retain falling/jumping physics
---     z = dz * speed
--- })
-
---         -- Check if 5 seconds have passed
---         if self.timer >= 5.0 then
---             self.timer = 0
---             -- Generate a random yaw angle (0 to 2 * pi)
---             local random_yaw = math.random() * (math.pi * 2)
---             -- Set the mob's new facing direction
---             self.object:set_yaw(random_yaw)
---         end
---     end,
--- })
-    

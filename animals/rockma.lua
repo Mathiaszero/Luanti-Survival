@@ -58,6 +58,11 @@ core.register_entity("animals:rockma", {
         end
     end,
 
+    on_punch = function(self, puncher, time_from_last_punch, tool_capabilities, dir, damage)
+        dmg = animals.retaliate(puncher, 2) 
+        puncher:set_hp(puncher:get_hp() - dmg)
+    end,
+
     on_death = function(self, killer)
         local pos = self.object:get_pos()
         core.add_item(pos, "animals:rockma_hide")

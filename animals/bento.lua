@@ -13,9 +13,9 @@ core.register_craftitem("animals:bento", {
     end,
 })
 
-core.register_craftitem("animals:bento_raw", {
-    description = "Raw bento Meat",
-    inventory_image = "bento_raw.png",
+core.register_craftitem("animals:bento_hide", {
+    description = "Bento Hide",
+    inventory_image = "bento_hide.png",
 })
 
 core.register_entity("animals:bento", {
@@ -25,7 +25,7 @@ core.register_entity("animals:bento", {
         visual = "mesh",
         mesh = "bento.b3d", 
         textures = {"bento.png"},
-        collisionbox = {-0.4, -0.01, -0.4, 0.4, 0.95, 0.4},
+        collisionbox = {-0.5, -0.01, -0.5, 0.3, 0.95, 0.3},
     },
     timer = 0,
 
@@ -57,9 +57,14 @@ core.register_entity("animals:bento", {
         end
     end,
 
+    on_punch = function(self, puncher, time_from_last_punch, tool_capabilities, dir, damage)
+        dmg = animals.retaliate(puncher, 1) 
+        puncher:set_hp(puncher:get_hp() - dmg)
+    end,
+
     on_death = function(self, killer)
         local pos = self.object:get_pos()
-        core.add_item(pos, "animals:bento_raw")
+        core.add_item(pos, "animals:bento_hide")
     end,
 })
 

@@ -4,6 +4,7 @@ animals.modpath = core.get_modpath("animals")
 dofile(animals.modpath.."/teraphyx.lua")
 dofile(animals.modpath.."/rockma.lua")
 dofile(animals.modpath.."/bento.lua")
+dofile(animals.modpath.."/lib.lua")
 text = "animals mod loaded."
 print(text)
 

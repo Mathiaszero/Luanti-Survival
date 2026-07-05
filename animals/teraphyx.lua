@@ -26,7 +26,7 @@ core.register_entity("animals:teraphyx", {
         visual = "mesh",
         mesh = "teraphyx.b3d", -- Or a custom 3D model
         textures = {"teraphyx.png"},
-        collisionbox = {-0.4, -0.01, -0.4, 0.4, 0.95, 0.4},
+        collisionbox = {-0.5, -0.01, -0.5, 0.5, 1.2, 0.5},
     },
     timer = 0,
 
@@ -56,6 +56,11 @@ core.register_entity("animals:teraphyx", {
             -- Mapblock containing the entity was unloaded
             self.object:remove()
         end
+    end,
+
+    on_punch = function(self, puncher, time_from_last_punch, tool_capabilities, dir, damage)
+        dmg = animals.retaliate(puncher, 3) 
+        puncher:set_hp(puncher:get_hp() - dmg)
     end,
 
     on_death = function(self, killer)

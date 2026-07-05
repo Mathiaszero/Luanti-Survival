@@ -22,10 +22,12 @@ THE SOFTWARE.
 
 Textures and Models
 
+animals mod
+
 mt-mods: Wilhemines Animal World (MIT)
 bento skin, bento inv, bento model 
 rockma skin, rockma inventory, rockma model, rockma hide
 teraphyx skin, teraphyx inventory, teraphyx model
 
 TenPlus1: Mobs Animal (CC0)
-raw bento meat, raw teraphyx meat
+leather, raw teraphyx meat

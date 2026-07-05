@@ -1,8 +1,8 @@
-foods = {}
+fishing = {}
 
-foods.modpath = core.get_modpath("foods")
---dofile(foods.modpath.."/seafood.lua")
-text = "foods mod loaded."
+fishing.modpath = core.get_modpath("fishing")
+dofile(fishing.modpath.."/seafood.lua")
+text = "fishing mod loaded."
 print(text)
 
 core.register_on_joinplayer(function(player)

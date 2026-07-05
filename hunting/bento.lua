@@ -1,11 +1,11 @@
-core.register_craftitem("animals:bento", {
+core.register_craftitem("hunting:bento", {
     description = "bento",
     inventory_image = "bento_inv.png",
     on_use = function(itemstack, user, pointed_thing)
         if pointed_thing.type ~= "node" then 
             return itemstack 
         end
-        local mob = core.add_entity(vector.add(pointed_thing.under, vector.new(0, 1, 0)), "animals:bento")
+        local mob = core.add_entity(vector.add(pointed_thing.under, vector.new(0, 1, 0)), "hunting:bento")
         if not core.is_creative_enabled(user:get_player_name()) then
             itemstack:take_item()
         end
@@ -13,12 +13,12 @@ core.register_craftitem("animals:bento", {
     end,
 })
 
-core.register_craftitem("animals:bento_hide", {
+core.register_craftitem("hunting:bento_hide", {
     description = "Bento Hide",
     inventory_image = "bento_hide.png",
 })
 
-core.register_entity("animals:bento", {
+core.register_entity("hunting:bento", {
     initial_properties = {
         hp_max = 20,
         physical = true,
@@ -58,13 +58,13 @@ core.register_entity("animals:bento", {
     end,
 
     on_punch = function(self, puncher, time_from_last_punch, tool_capabilities, dir, damage)
-        dmg = animals.retaliate(puncher, 1) 
+        dmg = hunting.retaliate(puncher, 1) 
         puncher:set_hp(puncher:get_hp() - dmg)
     end,
 
     on_death = function(self, killer)
         local pos = self.object:get_pos()
-        core.add_item(pos, "animals:bento_hide")
+        core.add_item(pos, "hunting:bento_hide")
     end,
 })
 
@@ -77,7 +77,7 @@ core.register_abm({
         local spawn_pos = {x = pos.x, y = pos.y + 1, z = pos.z}
         local above_node = core.get_node(spawn_pos)
         if above_node and above_node.name == "air" then
-            minetest.add_entity(spawn_pos, "animals:bento")
+            minetest.add_entity(spawn_pos, "hunting:bento")
         end
     end
 })

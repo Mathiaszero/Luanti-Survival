@@ -1,8 +1,8 @@
-function animals.retaliate(puncher, damage)
+function hunting.retaliate(puncher, damage)
     local inv = puncher:get_inventory()
-    if inv:contains_item("main", "animals:leather_armor") then
+    if inv:contains_item("main", "hunting:leather_armor") then
         damage = damage - 1
-    elseif inv:contains_item("main", "animals:reinforced_leather_armor") then
+    elseif inv:contains_item("main", "hunting:reinforced_leather_armor") then
         damage = damage - 2
     end
     if damage < 1 then
@@ -12,17 +12,17 @@ function animals.retaliate(puncher, damage)
     return damage
 end
 
-core.register_craftitem("animals:leather", {
+core.register_craftitem("hunting:leather", {
     description = "Leather",
     inventory_image = "leather.png",
 })
 
 core.register_craft({
     type = "shapeless",
-    output = "animals:leather",
+    output = "hunting:leather",
     recipe = {
-        "animals:bento_hide", "animals:bento_hide", "animals:bento_hide",
-        "animals:bento_hide", "animals:bento_hide", "animals:bento_hide",
-        "animals:bento_hide", "animals:bento_hide", "animals:bento_hide"
+        "hunting:bento_hide", "hunting:bento_hide", "hunting:bento_hide",
+        "hunting:bento_hide", "hunting:bento_hide", "hunting:bento_hide",
+        "hunting:bento_hide", "hunting:bento_hide", "hunting:bento_hide"
     }
 })

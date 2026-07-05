@@ -1,3 +1,3 @@
 ## Survival
 
-A modpack that brings additional survival features to Luanti.
+A modpack that enriches the Luanti game experience.

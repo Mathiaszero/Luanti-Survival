@@ -1,8 +1,4 @@
-Please check each mod for their own respective licenses.
-
 The MIT License (MIT)
-
-Survival Modpack
 
 Copyright (c) 2026 Mathiaszero
 
@@ -24,4 +20,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-All textures by Mathiaszero (CC0)
+Textures and Models
+
+animals
+rockma and bento by mt-mods: Wilhemines Animal World (MIT)
+all others by TenPlus1: Mobs Animal (CC0)

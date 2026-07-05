@@ -12,9 +12,14 @@ core.register_on_joinplayer(function(player)
     core.chat_send_player(name, text)
 end)
 
--- function eat(i, u, pt, h)
---     if core.get_modpath("stats") then
---         stats.set(core.get_player_by_name(u), "hunger", h)
---     end
---     return core.item_eat(1)
--- end
+--Rockma/rhino
+--Teraphyx/oryx
+--Den'rai/blue lobster
+--Bento/reindeer
+
+--Bugshark/shark
+--Mathiasi snail/snail
+
+--Muskox or cow/cow
+--Goose or chicken/chicken
+--Snow Leopard/cave lynx

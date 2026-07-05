@@ -11,7 +11,7 @@ swordfish 6x15=90
 bugshark 10x20=200
 ]]
 
---wield_scale = {x = 1.0, y = 1.0, z = 0.1},
+--wield_scale = {x = 1.0, y = 1.0, z = 0.1},--
 
 function eat(i, u, pt, h)--itemstack, user, pointed_thing, hunger
     if core.get_modpath("needs") then

@@ -25,7 +25,7 @@ Textures and Models
 animals mod
 
 mt-mods: Wilhemines Animal World (MIT)
-bento skin, bento inv, bento model 
+bento skin, bento inventory, bento model 
 rockma skin, rockma inventory, rockma model, rockma hide
 teraphyx skin, teraphyx inventory, teraphyx model
 

@@ -1,7 +1,7 @@
 fishing = {}
 
 fishing.modpath = core.get_modpath("fishing")
---dofile(fishing.modpath.."/seafood.lua")
+--dofile(fishing.modpath.."/rod.lua")
 text = "fishing mod loaded."
 print(text)
 

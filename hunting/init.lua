@@ -5,6 +5,7 @@ dofile(hunting.modpath.."/teraphyx.lua")
 dofile(hunting.modpath.."/rockma.lua")
 dofile(hunting.modpath.."/bento.lua")
 dofile(hunting.modpath.."/lib.lua")
+dofile(hunting.modpath.."/craft.lua")
 text = "hunting mod loaded."
 print(text)
 

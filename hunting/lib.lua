@@ -28,7 +28,7 @@ function lib.move(self, dtime, moveresult)
     check_nearby_mobs(self)
 
     if self.state == "wander" then
-        self.timer = self.timer + dtime
+        self.time = self.time + dtime
         local yaw = self.object:get_yaw()
         local speed = 1      
         local dir_x = math.sin(yaw) * -speed
@@ -39,8 +39,8 @@ function lib.move(self, dtime, moveresult)
             z = dir_z
         })
 
-        if self.timer >= 5.0 then
-            self.timer = 0
+        if self.time >= 5.0 then
+            self.time = 0
             local random_yaw = math.random() * (math.pi * 2)
             self.object:set_yaw(random_yaw)
         end

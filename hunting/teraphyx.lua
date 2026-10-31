@@ -28,7 +28,7 @@ core.register_entity("hunting:teraphyx", {
         textures = {"teraphyx.png"},
         collisionbox = {-0.5, -0.01, -0.5, 0.5, 1.2, 0.5},
     },
-    --timer = 0,
+    time = 0,
     state = "wander",
 
     on_step = function(self, dtime, moveresult)

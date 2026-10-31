@@ -49,18 +49,8 @@ core.register_entity("hunting:teraphyx", {
         end
     end,
 
-    on_deactivate = function(self, removal)
-        if removal then
-            -- Object was explicitly deleted
-        else
-            -- Mapblock containing the entity was unloaded
-            self.object:remove()
-        end
-    end,
-
-    on_punch = function(self, puncher, time_from_last_punch, tool_capabilities, dir, damage)
-        dmg = hunting.retaliate(puncher, 3) 
-        puncher:set_hp(puncher:get_hp() - dmg)
+    on_punch = function(self, puncher, last_punch_time, tool_abilities, dir, dmg)
+        --lib.punched(self, puncher, last_punch_time, tool_abilities, dir, 3)
     end,
 
     on_death = function(self, killer)
@@ -71,27 +61,4 @@ core.register_entity("hunting:teraphyx", {
     end,
 })
 
-core.register_abm({
-    label = "Spawn mob on dirt",
-    nodenames = {"group:soil"},
-    interval = 60, 
-    chance = 8000,  
-    action = function(pos, node, active_object_count, active_object_count_wider)
-        local spawn_pos = {x = pos.x, y = pos.y + 1, z = pos.z}
-        
-        local above_node = core.get_node(spawn_pos)
-        if above_node and above_node.name == "air" then
-            minetest.add_entity(spawn_pos, "hunting:teraphyx")
-        end
-    end
-})
 
---water
--- -- Get the node position at the entity's base
--- local pos = self.object:get_pos()
--- local node = core.get_node(pos)
-
--- -- Check if the node belongs to the "liquid" group
--- if minetest.get_item_group(node.name, "liquid") ~= 0 then
---     self.object:set_hp(0)
--- end

@@ -28,29 +28,15 @@ core.register_entity("hunting:teraphyx", {
         textures = {"teraphyx.png"},
         collisionbox = {-0.5, -0.01, -0.5, 0.5, 1.2, 0.5},
     },
-    timer = 0,
+    --timer = 0,
+    state = "wander",
 
     on_step = function(self, dtime, moveresult)
-        self.timer = self.timer + dtime
-        local yaw = self.object:get_yaw()
-        local speed = 1      
-        local dir_x = math.sin(yaw) * -speed
-        local dir_z = math.cos(yaw) * speed
-        self.object:set_velocity({
-            x = dir_x,
-            y= -1,
-            z = dir_z
-        })
-
-        if self.timer >= 5.0 then
-            self.timer = 0
-            local random_yaw = math.random() * (math.pi * 2)
-            self.object:set_yaw(random_yaw)
-        end
+        lib.move(self, dtime, moveresult)
     end,
 
     on_punch = function(self, puncher, last_punch_time, tool_abilities, dir, dmg)
-        --lib.punched(self, puncher, last_punch_time, tool_abilities, dir, 3)
+        lib.punched(self, puncher, last_punch_time, tool_abilities, dir, 1)
     end,
 
     on_death = function(self, killer)

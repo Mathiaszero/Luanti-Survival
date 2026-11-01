@@ -118,19 +118,14 @@ core.register_craft({
     type = "shapeless",
     output = "misc:rope",
     recipe = {
-        "misc:string", 
-        "misc:string",
+        "farming:string", 
+        "farming:string",
     }
-})
-
-core.register_craftitem("misc:string", {
-    description = "String",
-    inventory_image = "string.png",
 })
 
 core.register_craft({
     type = "shapeless",
-    output = "misc:string",
+    output = "farming:string",
     recipe = {
         "misc:rope",
     }

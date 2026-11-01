@@ -25,3 +25,5 @@ Other Attributions
 
 The handle, medium handle, and large handle: Copyright (c) 2018 GreenDimond (textures), MIT
 hemp.png taken from farming_hemp_fibre.png by TenPlus1's Farming Redo mod, CC by 3.0
+rope.png taken from farming_hemp_rope.png by TenPlus1's Farming Redo mod, CC by 3.0
+string.png taken from farming_string.png by TenPlus1's Farming Redo mod, CC by 3.0

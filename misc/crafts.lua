@@ -87,3 +87,51 @@ core.register_craft({
     }
 })
 
+core.register_craftitem("misc:hemp", {
+    description = "Hemp",
+    inventory_image = "hemp.png",
+})
+
+core.register_craft({
+    type = "shapeless",
+    output = "misc:hemp",
+    recipe = {
+        "default:leaves",
+        "default:leaves",
+    }
+})
+
+core.register_craftitem("misc:rope", {
+    description = "Rope",
+    inventory_image = "rope.png",
+})
+
+core.register_craft({
+    type = "shapeless",
+    output = "misc:rope",
+    recipe = {
+        "misc:hemp",
+    }
+})
+
+core.register_craft({
+    type = "shapeless",
+    output = "misc:rope",
+    recipe = {
+        "misc:string", 
+        "misc:string",
+    }
+})
+
+core.register_craftitem("misc:string", {
+    description = "String",
+    inventory_image = "string.png",
+})
+
+core.register_craft({
+    type = "shapeless",
+    output = "misc:string",
+    recipe = {
+        "misc:rope",
+    }
+})

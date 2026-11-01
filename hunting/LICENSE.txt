@@ -31,3 +31,7 @@ teraphyx skin, teraphyx inventory, teraphyx model
 
 TenPlus1: Mobs Animal (CC0)
 leather, raw teraphyx meat
+
+"well.obj" model (renamed from rainbarrel_well.obj)
+License: CC BY-SA 4.0
+Copyright (C) 2019 Piezo_

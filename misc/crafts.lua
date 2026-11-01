@@ -130,8 +130,3 @@ core.register_craft({
         "misc:rope",
     }
 })
-
-core.register_craftitem("misc:well", {
-    description = "Well",
-    inventory_image = "well.png",
-})

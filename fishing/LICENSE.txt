@@ -22,7 +22,8 @@ THE SOFTWARE.
 
 Textures/Models
 
-Net originally "mcl_fish_traps_trap.png", from mt-mods mcl_fish_trap mod, under GNU GPL.
+Net texture originally "mcl_fish_traps_trap.png", from mt-mods mcl_fish_trap mod, under GNU GPLv3.
+Fishing rod texture from TenPlus1's ethereal mod, under GNU GPLv3.
 
 3rd Party Licenses
 

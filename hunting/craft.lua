@@ -35,7 +35,7 @@ core.register_craftitem("hunting:teraphyx_raw", {
 })
 
 core.register_craftitem("hunting:bento", {
-    description = "bento",
+    description = "Bento",
     inventory_image = "bento_inv.png",
     on_use = function(itemstack, user, pointed_thing)
         if pointed_thing.type ~= "node" then 
@@ -55,7 +55,7 @@ core.register_craftitem("hunting:bento_hide", {
 })
 
 core.register_craftitem("hunting:rockma", {
-    description = "rockma",
+    description = "Rockma",
     inventory_image = "rockma_inv.png",
     
     on_use = function(itemstack, user, pointed_thing)

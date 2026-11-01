@@ -1,8 +1,8 @@
 hunting = {}
 
 hunting.modpath = core.get_modpath("hunting")
+dofile(hunting.modpath.."/crafts.lua")
 dofile(hunting.modpath.."/teraphyx.lua")
-dofile(hunting.modpath.."/craft.lua")
 dofile(hunting.modpath.."/rockma.lua")
 dofile(hunting.modpath.."/bento.lua")
 --dofile(hunting.modpath.."/lib.lua")

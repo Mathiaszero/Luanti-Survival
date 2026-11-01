@@ -64,9 +64,9 @@ core.register_entity("hunting:teraphyx", {
 local time = 0
 core.register_globalstep(function(dtime)
 	time = time + dtime
-	if time >= 10 then --orig: 100
+	if time >= 100 then --orig: 100
 		time = 0
-		if math.random() < 1.00 then spawn() end
+		if math.random() < .50 then spawn() end
 	end
 end)
 

@@ -28,7 +28,7 @@ core.register_craft({
     }
 })
 
-core.register_craftitem("fishing:scarfion_fishing_rod", {
+core.register_craftitem("fishing:scarfion_rod", {
     description = "Scarfion Fishing Rod",
-    inventory_image = "scarfion_fishing_rod.png",
+    inventory_image = "scarfion_rod.png",
 })

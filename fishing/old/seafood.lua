@@ -5,10 +5,10 @@ mackerel 1x15=15
 eel 2x10=20
 salmon 3x15=45
 halibut 3x15=45
-king crab 4x12=48
-tuna 4x15=60
-swordfish 6x15=90
-bugshark 10x20=200
+king crab 4x12=48 tbd
+tuna 4x15=60 tbd
+swordfish 6x15=90 tbd 
+bugshark 10x20=200 tbd
 ]]
 
 --wield_scale = {x = 1.0, y = 1.0, z = 0.1},--

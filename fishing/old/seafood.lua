@@ -8,7 +8,7 @@ halibut 3x15=45
 king crab 4x12=48 
 tuna 4x15=60 
 swordfish 6x15=90 
-bugshark 10x20=200 tbd
+bugshark 10x20=200 
 ]]
 
 --wield_scale = {x = 1.0, y = 1.0, z = 0.1},--
